@@ -99,16 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cartCountEl.textContent = count;
     cartTotalEl.textContent = formatPrice(total);
-
-    const fab = document.querySelector('.fab-whatsapp');
-
-    if (count > 0) {
-      cartBar.classList.add('visible');
-      if (fab) fab.classList.add('lifted');
-    } else {
-      cartBar.classList.remove('visible');
-      if (fab) fab.classList.remove('lifted');
-    }
   }
 
   function formatPrice(value) {

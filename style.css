@@ -481,34 +481,6 @@ section {
   color: var(--ember);
 }
 
-/* ============================================================
-   8. BOTÃO FLUTUANTE WHATSAPP (FAB)
-============================================================ */
-.fab-whatsapp {
-  position: fixed;
-  bottom: 24px;
-  right: 20px;
-  z-index: 99;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--green);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(37,211,102,.5);
-  transition: transform .2s, box-shadow .2s, bottom .3s ease;
-  animation: pulse 2.5s infinite;
-}
-
-.fab-whatsapp.lifted {
-  bottom: 100px;
-}
-
-.fab-whatsapp:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 28px rgba(37,211,102,.65);
-}
 
 @keyframes pulse {
   0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.5); }
