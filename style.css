@@ -481,6 +481,34 @@ section {
   color: var(--ember);
 }
 
+/* ============================================================
+   8. BOTÃO FLUTUANTE WHATSAPP (FAB)
+============================================================ */
+.fab-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 99;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.5);
+  transition: transform .2s, box-shadow .2s, bottom .3s ease;
+  animation: pulse 2.5s infinite;
+}
+
+.fab-whatsapp.lifted {
+  bottom: 100px;
+}
+
+.fab-whatsapp:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 28px rgba(37,211,102,.65);
+}
 
 @keyframes pulse {
   0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.5); }
@@ -914,4 +942,465 @@ footer {
 .modal-submit-btn {
   width: 100%;
   margin-top: 8px;
+}
+
+/* ============================================================
+   14. GRADE DE CATEGORIAS (substituição das abas horizontais)
+============================================================ */
+.cat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.cat-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 10px;
+  background: var(--ash);
+  border: 1.5px solid var(--smoke);
+  border-radius: var(--radius-md);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all .2s;
+  line-height: 1.2;
+}
+
+.cat-btn:hover,
+.cat-btn:active {
+  background: var(--fire);
+  border-color: var(--fire);
+  color: #fff;
+  transform: scale(.97);
+}
+
+.cat-btn span {
+  display: block;
+  font-size: 0.78rem;
+}
+
+/* emoji grande dentro do botão */
+.cat-btn::before {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+/* ============================================================
+   15. TÍTULOS DE SEÇÃO DO CARDÁPIO
+============================================================ */
+.menu-section {
+  padding: 8px 0 28px;
+}
+
+.menu-section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--ember);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--smoke);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ============================================================
+   16. SEÇÃO BEBIDAS — visual separado
+============================================================ */
+#sec-bebidas {
+  background: linear-gradient(135deg, rgba(37,211,102,.06), transparent 60%);
+  border-top: 2px solid rgba(37,211,102,.25);
+  border-radius: var(--radius-md);
+  margin: 0 0 8px;
+  padding: 20px 0 28px;
+}
+
+#sec-bebidas .menu-section-title {
+  color: #25D366;
+  border-bottom-color: rgba(37,211,102,.2);
+}
+
+/* ============================================================
+   17. MONTE SEU PASTEL
+============================================================ */
+.monte-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.pastel-qty-group {
+  margin-bottom: 18px;
+}
+
+.pastel-qty-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.pastel-qty-btn {
+  padding: 12px 8px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--smoke);
+  background: var(--ash);
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all .2s;
+}
+
+.pastel-qty-btn.active,
+.pastel-qty-btn:hover {
+  background: var(--fire);
+  border-color: var(--fire);
+  color: #fff;
+}
+
+/* grade de sabores */
+.sabores-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.sabor-btn {
+  padding: 12px 8px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--smoke);
+  background: var(--ash);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all .2s;
+}
+
+.sabor-btn.active {
+  background: var(--fire);
+  border-color: var(--fire);
+  color: #fff;
+}
+
+.sabor-btn.disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+/* adicionais */
+.adicionais-group {
+  margin-bottom: 18px;
+}
+
+.adicionais-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.adicional-btn {
+  padding: 10px 6px;
+  border-radius: var(--radius-sm);
+  border: 1.5px dashed var(--smoke);
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.78rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all .2s;
+}
+
+.adicional-btn.active {
+  background: rgba(255,154,31,.15);
+  border-color: var(--ember);
+  border-style: solid;
+  color: var(--ember);
+}
+
+/* resumo do pastel */
+.pastel-resumo-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--ash);
+  border: 1.5px solid var(--smoke);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-top: 4px;
+}
+
+.pastel-resumo-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.pastel-resumo-text {
+  font-size: 0.88rem;
+  color: var(--cream);
+  font-weight: 700;
+}
+
+.pastel-resumo-price {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--ember);
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* ============================================================
+   18. BADGE "NOVO!" E NOTA DE ADICIONAIS
+============================================================ */
+.badge-novo {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 900;
+  background: var(--fire);
+  color: #fff;
+  border-radius: 99px;
+  padding: 1px 7px;
+  margin-left: 4px;
+  vertical-align: middle;
+  letter-spacing: 0.06em;
+}
+
+.extras-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   19. INFO DE PREÇO DO MONTE SEU PASTEL
+============================================================ */
+.monte-preco-info {
+  font-size: 0.75rem;
+  color: var(--ember);
+  background: rgba(255,154,31,.1);
+  border: 1px solid rgba(255,154,31,.2);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  margin-bottom: 18px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+/* ============================================================
+   20. MELHORIA 1 — STATUS AO VIVO (ABERTO / FECHADO)
+============================================================ */
+.status-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 16px;
+  border-radius: 99px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-top: 12px;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.02em;
+}
+.status-bar.open {
+  background: rgba(37,211,102,.15);
+  border: 1px solid rgba(37,211,102,.4);
+  color: #25D366;
+}
+.status-bar.closed {
+  background: rgba(255,107,0,.12);
+  border: 1px solid rgba(255,107,0,.35);
+  color: var(--fire);
+}
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.status-bar.open .status-dot {
+  background: #25D366;
+  animation: blink-dot 1.5s infinite;
+}
+.status-bar.closed .status-dot {
+  background: var(--fire);
+}
+@keyframes blink-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .25; }
+}
+
+/* ============================================================
+   21. MELHORIA 3 — BANNER OFERTA DO DIA
+============================================================ */
+.promo-section {
+  padding: 16px 0 0;
+}
+.promo-banner {
+  background: linear-gradient(135deg, #1a0a00, var(--ash));
+  border: 1.5px solid var(--fire);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+.promo-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 50%, rgba(255,107,0,.18), transparent 60%);
+  pointer-events: none;
+}
+.promo-left { position: relative; z-index: 1; }
+.promo-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: var(--ember);
+  background: rgba(255,154,31,.15);
+  border-radius: 99px;
+  padding: 2px 10px;
+  margin-bottom: 6px;
+}
+.promo-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--cream);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+.promo-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.promo-price {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--fire);
+  margin-top: 6px;
+}
+.promo-price s {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-left: 6px;
+  text-decoration: line-through;
+}
+.promo-emoji {
+  font-size: 3rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  animation: float 3s ease-in-out infinite alternate;
+}
+
+/* ============================================================
+   22. MELHORIA 4 — BUSCA NO CARDÁPIO
+============================================================ */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: var(--ash);
+  border: 1.5px solid var(--smoke);
+  border-radius: var(--radius-md);
+  padding: 0 14px;
+  margin-bottom: 14px;
+  gap: 8px;
+  transition: border-color .2s;
+}
+.search-box:focus-within {
+  border-color: var(--fire);
+}
+.search-icon { font-size: 1rem; flex-shrink: 0; }
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 13px 0;
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  outline: none;
+}
+.search-input::placeholder { color: var(--muted); }
+.search-clear {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+}
+.search-empty {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.88rem;
+  padding: 24px 0;
+}
+
+/* ============================================================
+   23. MELHORIA 5 — TOAST NOTIFICATION
+============================================================ */
+.toast {
+  position: fixed;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ash);
+  border: 1px solid var(--fire);
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--cream);
+  z-index: 999;
+  transition: top .35s cubic-bezier(.34,1.56,.64,1);
+  white-space: nowrap;
+  max-width: 90vw;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,.5);
+}
+.toast.show {
+  top: 16px;
+}
+
+/* ============================================================
+   24. MELHORIA 6 — SCROLL REVEAL
+============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
