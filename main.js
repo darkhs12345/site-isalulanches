@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ============================================================
      MELHORIA 1 — STATUS AO VIVO (ABERTO / FECHADO)
-     Horário: Seg–Sáb, 16h às 22h
+     Horário: Ter–Domingo, 18h às 23h
   ============================================================ */
   function updateStatus() {
     const bar = document.getElementById('status-bar');
@@ -311,14 +311,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const dia      = agora.getDay();   // 0=Dom, 6=Sáb
     const hora     = agora.getHours();
     const minuto   = agora.getMinutes();
-    const aberto   = dia >= 1 && dia <= 6 &&
-                     (hora > 16 || (hora === 16 && minuto >= 0)) && hora < 22;
+    const aberto   = dia >= 2 && dia <= 7 &&
+                     (hora > 18 || (hora === 18 && minuto >= 0)) && hora < 23;
     bar.className  = `status-bar ${aberto ? 'open' : 'closed'}`;
     bar.innerHTML  = `
       <span class="status-dot"></span>
       ${aberto
-        ? '🟢 Aberto agora · Fecha às 22h'
-        : '🔴 Fechado agora · Abre às 16h (Seg–Sáb)'}
+        ? '🟢 Aberto agora · Fecha às 23h'
+        : '🔴 Fechado agora · Abre às 18h (Ter–Domingo)'}
     `;
   }
   updateStatus();
